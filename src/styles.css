@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Global reset*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: linear-gradient(to right, #00b3fe, #b01eff);
+}

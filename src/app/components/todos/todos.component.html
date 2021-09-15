@@ -1,0 +1,36 @@
+<form (submit)="addTodoItem()">
+  <input
+    type="text"
+    name="inputTodoText"
+    class="inputTodoText"
+    placeholder="Enter Task To Do"
+    [(ngModel)]="inputTodoText"
+  />
+  <div class="buttons">
+    <input
+      type="file"
+      name="imageInput"
+      id=""
+      class="file"
+      (change)="getBase64($event)"
+    />
+
+    <input type="submit" value="Add Task" accept="image/*" class="addTodo" />
+  </div>
+</form>
+
+<div class="todo-list">
+  <div *ngFor="let todoItem of todoItems; let i = index" class="todo-item">
+    <p class="todo-info serial">{{ i + 1 }}</p>
+    <p class="todo-info content">
+      {{ todoItem.content }}
+    </p>
+
+    <img
+      class="todo-img"
+      src="{{ todoItem.image }}"
+      style="display: {{ todoItem.image ? 'block' : 'none' }};"
+    />
+    <button class="delete todo-info" (click)="deleteItem(i)">Delete</button>
+  </div>
+</div>
